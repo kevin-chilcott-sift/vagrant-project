@@ -4,6 +4,7 @@
   <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 </head>
 <body>
+    <!-- Printing out header redirect error messages -->
     <?php
 
         if(isset($_GET['fail-firstname']))
@@ -27,16 +28,19 @@
         }
 
     ?>
+    <!-- Sending the submitted form data to the homework-form-processor.php file -->
   <form method="POST" action="http://192.168.33.10/vagrant-project/homework-form-processor.php">
     <div class="container">
       <p class="header"> Complete personalisation of your account </p>
       <p>Address</p>
+      <!-- tick box to say if there address is the same as there shipping address -->
       <div class="squaredThree">
         <input type="checkbox" value="None" id="squaredThree" name="check">
         <label for="squaredThree"></label>
       </div> Same as billing address<br>
       <input class="textbox border margin" type="text" name="address" placeholder="Address"><br>
       <input class="textbox border" type="text" name="address" placeholder="Address details">
+      <!-- drop down menu to select the users country -->
       <p>Country</p>
       <select  class="border" name="country">
         <option value="">Country...</option>
@@ -299,9 +303,11 @@
       <p> Set Default Loctaion </p>
       <input class="border textbox" class="textbox" type="text"><br>
       <br>
+      <!-- Radio buttons to select the users gender -->
       Gender: <input type="radio" name="sex" value="male" checked >Male
       <input type="radio" name="sex" value="female" >Female<br>
       <br>
+      <!-- Drop down to select the usersd title -->
       <p>Title</p>
       <select  class="border" name="title">
         <option value="Title">Title...</option>
@@ -319,6 +325,7 @@
       <p>Card Number</p>
         <input class="border textbox" type="text" name="card_number">
       <br></br>
+      <!-- Drop down menu's for the user to input the expiry date of there card -->
       <p>Expiry date</p>
       <select  class="border" name="Ep_date">
         <option value="Expiry_date_month">Month...</option>
@@ -357,9 +364,11 @@
       <br></br>
       <input type="radio" name="sex" value="male" checked>I agree to your terms and conditions.
       <br></br>
+      <!-- Submitting registeration form -->
       <button class="submit border" type="submit" name="submit" href="#">save account details</button><br>
       <br>
     </div>
+      <!-- Button which allows users to skip the registration process -->
       <button class="skip border" type="submit" name="skip" href="#"> X Skip This Section</button>
   </form>
 
@@ -367,5 +376,6 @@
 
 <!-- In HTML5, which attribute is used to specify that an input field must be filled out? -->
 <!-- In HTML5, contextmenu and spellcheck are:? -->
+<!-- This form was made be me Kevin Chilcott -->
 
 </html>
