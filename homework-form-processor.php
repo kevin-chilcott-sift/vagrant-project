@@ -64,7 +64,9 @@
     /*This is a foreach statment that will determine that what ever required_field is empty it will header redirect back to the index.php file and echo a specfic error */
     foreach ($required_fields as $required_field => $value) {
       if (empty($_POST)$required_field){
-      header("Location: http://192.168.33.10/vagrant-project/homework-form-index.php?empty-field");
+      header("Location: http://192.168.33.10/vagrant-project/index.php?empty-field");
+      }else{
+        header("location: http://192.168.33.10/vagrant-project/homework-form-success.php");
       }
     }
   ?>
