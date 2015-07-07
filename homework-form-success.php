@@ -4,18 +4,23 @@
   <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <div class="container">
-    <h1> Thank you </h1>
-    <h2> For signing up</h2>
+  <form>
+    <div class="container">
+      <h1> Thank you </h1>
+      <h2> For signing up</h2>
 
-    <?php
+      <?php
 
-    echo "Firstname =" . " " . $firstname . "</br>";
-    echo "Surname =" . " " . $surname . "</br>";
-    echo "CVC number =" . " " . $cvc_number . "</br>";
-    echo "Cardnumber =" . " " . $full_cardnumber;
+      if(isset($_GET[$required_fields]))
+        {
+          echo "Firstname =" . " " . $firstname . "</br>";
+          echo "Surname =" . " " . $surname . "</br>";
+          echo "CVC number =" . " " . $cvc_number . "</br>";
+          echo "Cardnumber =" . " " . $full_cardnumber;
+        };
 
-    ?>
-  </div>
+      ?>
+    </div>
+  <form>
 </body>
 </html>

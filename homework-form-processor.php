@@ -27,7 +27,7 @@
     /* Now printing out the card number in the format we want it i.e. no spaces and - between ever 4 numbers*/
     echo "Cardnumber =" . " " . $full_cardnumber;
     }
-    /* original method of checking ifg each required field in the form is empty, if so it will return to the index.php file and a error message will be displayed */
+    /* original method of checking if each required field in the form is empty, if so it will return to the index.php file and a error message will be displayed */
     if(empty($_POST['firstname'])){
       header("Location: http://192.168.33.10/vagrant-project/homework-form-index.php?fail-firstname");
 
@@ -56,20 +56,25 @@
       header("Location: http://192.168.33.10/vagrant-project/homework-form-success.php");
     }
     /* This is the beginning of a better method to output this data */
-    $required_fields = array{
+    session_start();
+    $_SESSION["required_fields"]=$required_fields;
+    $required_fields = array(
+      'firstname' => 'firstname',
+      'surname' => 'surname',
+      'cardnumber' => 'cardnumber',
+      'cvc_number' => 'cvc number');
 
+    /* This is a foreach statment that will determine that what ever required_field is empty it will header redirect back to the index.php file and echo a specfic error */
 
-    }
-
-    /*This is a foreach statment that will determine that what ever required_field is empty it will header redirect back to the index.php file and echo a specfic error */
-    foreach ($required_fields as $required_field => $value) {
-      if (empty($_POST)$required_field){
-      header("Location: http://192.168.33.10/vagrant-project/index.php?empty-field");
+    foreach ($required_fields as $required_field => $human_string) {
+      if (empty($_POST[$required_field])){
+      /* If empty Header redirect back to index.php file */
+      header("Location: http://192.168.33.10/vagrant-project/index.php?required_fields");
       }else{
-        header("location: http://192.168.33.10/vagrant-project/homework-form-success.php");
+        header("location: http://192.168.33.10/vagrant-project/homework-form-success.php?required_fields");
       }
     }
-  ?>
 
+  ?>
 </body>
 </html>

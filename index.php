@@ -7,26 +7,10 @@
     <!-- Printing out header redirect error messages -->
     <?php
 
-        if(isset($_GET['fail-firstname']))
+        if(isset($_GET['required_fields']))
         {
-          echo "ERROR: No firstname";
+          echo "You must enter you" . $human_string . "<br>";
         }
-
-        if(isset($_GET['fail-surname']))
-        {
-          echo "ERROR: No surname";
-        }
-
-        if(isset($_GET['fail-cvc_number']))
-        {
-          echo "ERROR: No cvc number";
-        }
-
-        if(isset($_GET['fail-full_cardnumber']))
-        {
-          echo "ERROR: No cardnumber";
-        }
-
     ?>
     <!-- Sending the submitted form data to the homework-form-processor.php file -->
   <form method="POST" action="http://192.168.33.10/vagrant-project/homework-form-processor.php">
