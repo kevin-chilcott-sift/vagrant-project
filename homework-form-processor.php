@@ -2,6 +2,9 @@
 <body>
 
   <?php
+    /* Get my data out of session, and populate my array again. */
+    session_start();
+    $required_fields = $_SESSION["required_fields"];
     /* This is the submitted data from the forms*/
     /* Turning the data into strings that can be used in functions*/
     if(isset($_POST['submit'])){
@@ -29,35 +32,33 @@
     }
     /* original method of checking if each required field in the form is empty, if so it will return to the index.php file and a error message will be displayed */
     if(empty($_POST['firstname'])){
-      header("Location: http://192.168.33.10/vagrant-project/homework-form-index.php?fail-firstname");
+      header("Location: http://192.168.33.10/vagrant-project/index.php?fail-firstname");
 
     }else{
       header("Location: http://192.168.33.10/vagrant-project/homework-form-success.php");
     }
 
     if(empty($_POST['surname'])){
-      header("Location: http://192.168.33.10/vagrant-project/homework-form-index.php?fail-surname");
+      header("Location: http://192.168.33.10/vagrant-project/index.php?fail-surname");
 
     }else{
       header("Location: http://192.168.33.10/vagrant-project/homework-form-success.php");
     }
 
     if(empty($_POST['cvc_number'])){
-      header("Location: http://192.168.33.10/vagrant-project/homework-form-index.php?fail-cvc_number");
+      header("Location: http://192.168.33.10/vagrant-project/index.php?fail-cvc_number");
 
     }else{
       header("Location: http://192.168.33.10/vagrant-project/homework-form-success.php");
     }
 
     if(empty($_POST['full_cardnumber'])){
-      header("Location: http://192.168.33.10/vagrant-project/homework-form-index.php?fail-full_cardnumber");
+      header("Location: http://192.168.33.10/vagrant-project/sindex.php?fail-full_cardnumber");
 
     }else{
       header("Location: http://192.168.33.10/vagrant-project/homework-form-success.php");
     }
-    /* This is the beginning of a better method to output this data */
-    session_start();
-    $_SESSION["required_fields"]=$required_fields;
+    /* This is the beginning of a better method to output this data */ 
     $required_fields = array(
       'firstname' => 'firstname',
       'surname' => 'surname',
@@ -71,7 +72,7 @@
       /* If empty Header redirect back to index.php file */
       header("Location: http://192.168.33.10/vagrant-project/index.php?required_fields");
       }else{
-        header("location: http://192.168.33.10/vagrant-project/homework-form-success.php?required_fields");
+        header("location: http://192.168.33.10/vagrant-project/homework-form-success.php?required_fields=true");
       }
     }
 

@@ -11,7 +11,7 @@
 
       <?php
 
-      if(isset($_GET[$required_fields]))
+      if(isset($_GET["required_fields"]))
         {
           echo "Firstname =" . " " . $firstname . "</br>";
           echo "Surname =" . " " . $surname . "</br>";
