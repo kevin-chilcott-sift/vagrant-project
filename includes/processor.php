@@ -24,7 +24,7 @@
   //krumo($required_fields_letters_only);
   //only redirect if error are empty
   if (!empty($_SESSION['errors'])){
-    header('location:form/index.php');
+    header('location:../form/index.php');
   }
 
   $servername = "localhost";
@@ -55,7 +55,7 @@
       echo "Error: " . $sql . "<br>" . $conn->error;
   }
 
-  header('location:form/includes/output.php');
+  header('location:../form/includes/output.php');
 
   $conn->close();
 ?>

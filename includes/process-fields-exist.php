@@ -13,6 +13,6 @@
   }
   //only redirect if error are empty
   if (!empty($_SESSION['errors'])){
-    header('location:form/index.php');
+    header('location:../form/index.php');
   }
 ?>
