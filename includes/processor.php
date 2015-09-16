@@ -6,20 +6,26 @@
   //required fields for the form
 
   $required_fields = array(
+    'firstname',
+    'surname',
+    'card_number',
+    'cvc_number',
+  );
+
+  $posted_values = array(
     'firstname' => $_POST['firstname'],
     'surname' => $_POST['surname'],
     'card_number' => $_POST['card_number'],
     'cvc_number' => $_POST['cvc_number'],
   );
 
- $_SESSION['required_fields'] = $required_fields;
+ $_SESSION['posted_values'] = $posted_values;
 
   include 'process-fields-exist.php';
   include 'process-fields-not-empty.php';
   include 'process-fields-letters-only.php';
   include 'process-fields-numbers-only.php';
   include 'process-fields-numeric-checks.php';
-  include 'unit-tests.php';
   
   //krumo($required_fields_letters_only);
   //only redirect if error are empty

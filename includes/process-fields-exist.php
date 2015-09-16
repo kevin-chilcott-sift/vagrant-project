@@ -2,9 +2,9 @@
   // empty the required fields ready for new errors
   $errors = array();
   //check to see if the post data contains required values
-  foreach ($required_fields as $value) {
-    if (!array_key_exists($value, $_POST)) {
-        $errors[]=$value;
+  foreach ($required_fields as $required_field) {
+    if ('' == $_POST[$required_field]) {
+        $errors[]=$required_field;
     }
     //krumo($_SESSION);
   }

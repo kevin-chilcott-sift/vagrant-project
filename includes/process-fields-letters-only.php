@@ -11,7 +11,7 @@ $required_fields_letters_only = array(
     if (ValidateFormHasOnlyLetter($_POST[$value])){
       // great stuff!
     }else{
-      $required_fields_letters_only_errors[] = $value];
+      $required_fields_letters_only_errors[] = $value;
     }
   }
   if(!empty($required_fields_letters_only_errors)){
